@@ -1,6 +1,6 @@
 <h1 align="left"><a href="#">ByteDance SDK</a></h1>
 
-📦 It is probably the best SDK in the world for developing Wechat App.
+📦 字节跳动PHP SDK 抖音小程序、头条小程序开发组件。PHP SDK for bytedance (douyin, tiktok, toutiao)
 
 
 ## Requirement
