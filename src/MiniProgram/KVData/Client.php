@@ -32,9 +32,9 @@ class Client extends BaseClient
      * @return \Psr\Http\Message\ResponseInterface|\EasyWeChat\Kernel\Support\Collection|array|object|string
      * @throws \OtkurBiz\ByteDance\Kernel\Exceptions\InvalidConfigException
      */
-    public function setUserStorage(string $openid, string $signature, string $sig_method, string $kv_list)
+    public function set(string $openid, string $signature, string $sig_method, string $kv_list)
     {
-        return $this->httpPost('api/apps/set_user_storage', ['openid'=>intval($openid), 'signature' => $signature, 'sig_method'=>$sig_method, 'kv_list'=>$kv_list]);
+        return $this->httpPost('api/apps/set_user_storage', ['openid'=>$openid, 'signature' => $signature, 'sig_method'=>$sig_method, 'kv_list'=>$kv_list]);
     }
 
     /**
@@ -49,9 +49,9 @@ class Client extends BaseClient
      * @return \Psr\Http\Message\ResponseInterface|\EasyWeChat\Kernel\Support\Collection|array|object|string
      * @throws \OtkurBiz\ByteDance\Kernel\Exceptions\InvalidConfigException
      */
-    public function removeUserStorage(string $openid, string $signature, string $sig_method, string $key)
+    public function remove(string $openid, string $signature, string $sig_method, string $key)
     {
-        return $this->httpPost('api/apps/remove_user_storage', ['openid'=>intval($openid), 'signature' => $signature, 'sig_method'=>$sig_method, 'key'=>$key]);
+        return $this->httpPost('api/apps/remove_user_storage', ['openid'=>$openid, 'signature' => $signature, 'sig_method'=>$sig_method, 'key'=>$key]);
     }
 
 }

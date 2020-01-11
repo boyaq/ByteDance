@@ -18,6 +18,7 @@ use OtkurBiz\ByteDance\Kernel\ServiceContainer;
  * @property \OtkurBiz\ByteDance\MiniProgram\Auth\AccessToken $access_token
  * @property \OtkurBiz\ByteDance\MiniProgram\Auth\Client $auth
  * @property \OtkurBiz\ByteDance\MiniProgram\KVData\Client $kv
+ * @property \OtkurBiz\ByteDance\MiniProgram\QRCode\Client $qrcode
  */
 class Application extends ServiceContainer
 {
@@ -27,5 +28,6 @@ class Application extends ServiceContainer
     protected $providers = [
         Auth\ServiceProvider::class,
         KVData\ServiceProvider::class,
+        QRCode\ServiceProvider::class,
     ];
 }
