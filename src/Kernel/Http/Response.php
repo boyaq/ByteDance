@@ -11,8 +11,8 @@
 
 namespace OtkurBiz\ByteDance\Kernel\Http;
 
-use OtkurBiz\ByteDance\Kernel\Support\Collection;
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
+use OtkurBiz\ByteDance\Kernel\Support\Collection;
 use Psr\Http\Message\ResponseInterface;
 
 /**

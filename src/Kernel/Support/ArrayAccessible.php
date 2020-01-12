@@ -13,8 +13,8 @@ namespace OtkurBiz\ByteDance\Kernel\Support;
 
 use ArrayAccess;
 use ArrayIterator;
-use OtkurBiz\ByteDance\Kernel\Contracts\Arrayable;
 use IteratorAggregate;
+use OtkurBiz\ByteDance\Kernel\Contracts\Arrayable;
 
 /**
  * Class ArrayAccessible.

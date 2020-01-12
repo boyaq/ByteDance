@@ -385,9 +385,9 @@ class Arr
      * @param array    $array
      * @param int|null $amount
      *
-     * @return mixed
-     *
      * @throws \InvalidArgumentException
+     *
+     * @return mixed
      */
     public static function random(array $array, int $amount = null)
     {
