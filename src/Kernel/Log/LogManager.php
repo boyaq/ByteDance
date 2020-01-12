@@ -11,7 +11,6 @@
 
 namespace OtkurBiz\ByteDance\Kernel\Log;
 
-use OtkurBiz\ByteDance\Kernel\ServiceContainer;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\ErrorLogHandler;
 use Monolog\Handler\HandlerInterface;
@@ -20,6 +19,7 @@ use Monolog\Handler\SlackWebhookHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogHandler;
 use Monolog\Logger as Monolog;
+use OtkurBiz\ByteDance\Kernel\ServiceContainer;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -54,13 +54,13 @@ class LogManager implements LoggerInterface
      * @var array
      */
     protected $levels = [
-        'debug' => Monolog::DEBUG,
-        'info' => Monolog::INFO,
-        'notice' => Monolog::NOTICE,
-        'warning' => Monolog::WARNING,
-        'error' => Monolog::ERROR,
-        'critical' => Monolog::CRITICAL,
-        'alert' => Monolog::ALERT,
+        'debug'     => Monolog::DEBUG,
+        'info'      => Monolog::INFO,
+        'notice'    => Monolog::NOTICE,
+        'warning'   => Monolog::WARNING,
+        'error'     => Monolog::ERROR,
+        'critical'  => Monolog::CRITICAL,
+        'alert'     => Monolog::ALERT,
         'emergency' => Monolog::EMERGENCY,
     ];
 
@@ -138,9 +138,9 @@ class LogManager implements LoggerInterface
      *
      * @param string $name
      *
-     * @return \Psr\Log\LoggerInterface
-     *
      * @throws \InvalidArgumentException
+     *
+     * @return \Psr\Log\LoggerInterface
      */
     protected function resolve($name)
     {
@@ -350,9 +350,9 @@ class LogManager implements LoggerInterface
      *
      * @param array $config
      *
-     * @return int
-     *
      * @throws \InvalidArgumentException
+     *
+     * @return int
      */
     protected function level(array $config)
     {

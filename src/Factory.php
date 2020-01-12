@@ -7,10 +7,12 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
+
 namespace OtkurBiz\ByteDance;
 
 /**
  * Class Factory.
+ *
  * @method static \OtkurBiz\ByteDance\Application    bytedance(array $config)
  */
 class Factory
@@ -27,6 +29,7 @@ class Factory
 
         return new $application($config);
     }
+
     /**
      * Dynamically pass methods to the application.
      *
