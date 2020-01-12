@@ -1,11 +1,12 @@
 a<?php
-use PHPUnit\Framework\TestCase;
 use OtkurBiz\ByteDance\Factory;
+use PHPUnit\Framework\TestCase;
+
 class ClientTest extends TestCase
 {
     public function testCode()
     {
-        $config = require __DIR__ . '/../../config.php';
+        $config = require __DIR__.'/../../config.php';
         $app = Factory::make($config);
         $code = '123';
         $result = $app->auth->session($code);
@@ -16,7 +17,7 @@ class ClientTest extends TestCase
 
     public function testAnonymousCode()
     {
-        $config = require __DIR__ . '/../../config.php';
+        $config = require __DIR__.'/../../config.php';
         $app = Factory::make($config);
         $code = '123';
         $result = $app->auth->session($code, true);

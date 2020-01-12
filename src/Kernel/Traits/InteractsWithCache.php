@@ -7,11 +7,14 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
+
 namespace OtkurBiz\ByteDance\Kernel\Traits;
-use OtkurBiz\ByteDance\Kernel\ServiceContainer;
-use Psr\SimpleCache\CacheInterface;
+
 use Doctrine\Common\Cache\Cache;
 use Doctrine\Common\Cache\FilesystemCache;
+use OtkurBiz\ByteDance\Kernel\ServiceContainer;
+use Psr\SimpleCache\CacheInterface;
+
 /**
  * Trait InteractsWithCache.
  *
@@ -23,6 +26,7 @@ trait InteractsWithCache
      * @var \Psr\SimpleCache\CacheInterface
      */
     protected $cache;
+
     /**
      * Get cache instance.
      *
@@ -37,8 +41,10 @@ trait InteractsWithCache
             && isset($this->app['cache']) && $this->app['cache'] instanceof CacheInterface) {
             return $this->cache = $this->app['cache'];
         }
+
         return $this->cache = $this->createDefaultCache();
     }
+
     /**
      * Set cache instance.
      *
@@ -49,8 +55,10 @@ trait InteractsWithCache
     public function setCache(CacheInterface $cache)
     {
         $this->cache = $cache;
+
         return $this;
     }
+
     /**
      * @return \Symfony\Component\Cache\Simple\FilesystemCache
      */

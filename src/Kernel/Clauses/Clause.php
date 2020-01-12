@@ -7,7 +7,9 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
+
 namespace OtkurBiz\ByteDance\Kernel\Clauses;
+
 /**
  * Class Clause.
  *
@@ -21,6 +23,7 @@ class Clause
     protected $clauses = [
         'where' => [],
     ];
+
     /**
      * @param mixed ...$args
      *
@@ -29,8 +32,10 @@ class Clause
     public function where(...$args)
     {
         array_push($this->clauses['where'], $args);
+
         return $this;
     }
+
     /**
      * @param mixed $payload
      *
@@ -40,6 +45,7 @@ class Clause
     {
         return (bool) $this->interceptWhereClause($payload);
     }
+
     /**
      * @param mixed $payload
      *

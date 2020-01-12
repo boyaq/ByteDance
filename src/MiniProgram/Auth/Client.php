@@ -25,24 +25,22 @@ class Client extends BaseClient
      *
      * @param string $code
      *
-     * @return \Psr\Http\Message\ResponseInterface|\OtkurBiz\ByteDance\Kernel\Support\Collection|array|object|string
-     *
      * @throws \OtkurBiz\ByteDance\Kernel\Exceptions\InvalidConfigException
+     *
+     * @return \Psr\Http\Message\ResponseInterface|\OtkurBiz\ByteDance\Kernel\Support\Collection|array|object|string
      */
-    public function session(string $code, bool  $anonymous = false)
+    public function session(string $code, bool $anonymous = false)
     {
         $params = [
-            'appid' => $this->app['config']['app_id'],
+            'appid'  => $this->app['config']['app_id'],
             'secret' => $this->app['config']['app_secret'],
         ];
-        if($anonymous){
+        if ($anonymous) {
             $params['anonymous_code'] = $code;
-        }else{
+        } else {
             $params['code'] = $code;
         }
 
         return $this->httpGet('api/apps/jscode2session', $params);
     }
-
-
 }

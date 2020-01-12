@@ -60,9 +60,9 @@ class Str
      *
      * @param int $length
      *
-     * @return string
-     *
      * @throws \RuntimeException
+     *
+     * @return string
      */
     public static function random($length = 16)
     {
@@ -84,13 +84,13 @@ class Str
      *
      * @param int $length
      *
+     * @throws RuntimeException
+     * @throws \Exception
+     *
      * @return string
      *
-     * @throws RuntimeException
      *
      * @codeCoverageIgnore
-     *
-     * @throws \Exception
      */
     public static function randomBytes($length = 16)
     {
