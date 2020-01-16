@@ -10,6 +10,7 @@
 
 namespace OtkurBiz\ByteDance\MiniProgram\Auth;
 
+use OtkurBiz\ByteDance\MiniProgram\Encryptor;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
@@ -30,6 +31,10 @@ class ServiceProvider implements ServiceProviderInterface
         };
         !isset($app['auth']) && $app['auth'] = function ($app) {
             return new Client($app);
+        };
+
+        !isset($app['encryptor']) && $app['encryptor'] = function ($app) {
+            return new Encryptor();
         };
     }
 }

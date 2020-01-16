@@ -8,7 +8,7 @@ class ClientTest extends TestCase
     {
         $config = require __DIR__.'/../../config.php';
         $app = Factory::make($config);
-        $code = '123';
+        $code = '220c420ed5988f05';
         $result = $app->auth->session($code);
 
         $this->assertArrayHasKey('session_key', $result);
@@ -19,7 +19,7 @@ class ClientTest extends TestCase
     {
         $config = require __DIR__.'/../../config.php';
         $app = Factory::make($config);
-        $code = '123';
+        $code = '7e70381826fb9ff5';
         $result = $app->auth->session($code, true);
 
         $this->assertArrayHasKey('session_key', $result);

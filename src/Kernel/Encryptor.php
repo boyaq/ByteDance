@@ -34,20 +34,6 @@ class Encryptor
     const ILLEGAL_BUFFER = -41003; // Illegal buffer
 
     /**
-     * App id.
-     *
-     * @var string
-     */
-    protected $appId;
-
-    /**
-     * App token.
-     *
-     * @var string
-     */
-    protected $token;
-
-    /**
      * @var string
      */
     protected $aesKey;
@@ -66,24 +52,10 @@ class Encryptor
      * @param string|null $token
      * @param string|null $aesKey
      */
-    public function __construct(string $appId, string $token = null, string $aesKey = null)
+    public function __construct(string $aesKey = null)
     {
-        $this->appId = $appId;
-        $this->token = $token;
         $this->aesKey = base64_decode($aesKey.'=', true);
     }
-
-    /**
-     * Get the app token.
-     *
-     * @return string
-     */
-    public function getToken(): string
-    {
-        return $this->token;
-    }
-
-
 
 
     /**

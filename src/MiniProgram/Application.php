@@ -32,6 +32,5 @@ class Application extends ServiceContainer
         KVData\ServiceProvider::class,
         QRCode\ServiceProvider::class,
         Message\ServiceProvider::class,
-        Encryptor::class,
     ];
 }
